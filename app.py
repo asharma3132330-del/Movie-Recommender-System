@@ -11,7 +11,7 @@ similarity_url = "https://drive.google.com/uc?export=download&id=1YLqOgAB8UhARod
 
 @st.cache_data(show_spinner=True)
 def load_similarity(url):
-    response = requests.get(url, stream=True)
+    response = requests.get(url)
     response.raise_for_status()
     return pickle.load(BytesIO(response.content))
 
